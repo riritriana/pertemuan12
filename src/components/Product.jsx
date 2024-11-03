@@ -27,9 +27,9 @@ export default function Product() {
   const [products, setProducts] = useState(
     saveProduct ? JSON.parse(saveProduct) : productData);
     useEffect(() => {
-      localStorage.setItem("productss", JSON.stringify(products));
-   }),[products];
-
+      localStorage.setItem("products", JSON.stringify(products));
+    }, [products]);
+    
   // const [products, setProducts] = useState(productData);// untuk menyimpan data produk yg akan ditampilak dikomponen
   const [formData, setformData] = useState(null); // untuk menampung data dari form input sementara sebelum di add/update ke daftar product
   const [isEdit, setIsEdit] = useState(false); // Untuk menentukan apakah form digunakan untuk edit atau add
