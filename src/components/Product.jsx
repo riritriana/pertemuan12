@@ -1,6 +1,6 @@
 // Product.js
 import { useContext, useEffect, useState } from "react";
-import { Krjcontext } from "../App";
+import { CartContext } from "../App";
 
 export default function Product() {
   const productData = [
@@ -27,7 +27,7 @@ export default function Product() {
     },
   ];
 
-  const { keranjang, setKeranjang } = useContext(Krjcontext);
+  const { keranjang, setKeranjang } = useContext(CartContext);
 
   const saveProduct = localStorage.getItem("products");
   const [products, setProducts] = useState(

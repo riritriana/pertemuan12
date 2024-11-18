@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Krjcontext } from "../App";
+import { CartContext } from "../App";
 
 export default function Header(){
 
-    const {keranjang}=useContext(Krjcontext);
+    const {keranjang}=useContext(CartContext);
     
     return(     
         <header className="header">
