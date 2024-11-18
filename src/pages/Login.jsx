@@ -8,6 +8,7 @@ export default function Login() {
 
   function handleLogin(e) {
     e.preventDefault();
+    
     if (username === "user" && password === "password") {
       localStorage.setItem("isLoggedIn", "true");
       navigate("/");
