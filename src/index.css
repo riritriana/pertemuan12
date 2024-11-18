@@ -206,3 +206,10 @@
   padding: 20px;
   text-align: center;
 }
+
+.title-login{
+  text-align: center;
+  /* font-size: 2em; */
+  color: #333;
+  /* margin-bottom: 20px; */
+}

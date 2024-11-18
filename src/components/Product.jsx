@@ -1,38 +1,33 @@
-// Product.js
+
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../App";
 
 export default function Product() {
-  const productData = [
-    {
-      id: 1,
-      productName: "Cardigan Rajut",
-      price: 200000,
-      image:
-        "https://i.pinimg.com/564x/7b/d1/35/7bd13515976c2c8c9a565b5063319668.jpg",
-    },
-    {
-      id: 2,
-      productName: "Kemeja Lengan panjang ",
-      price: 130000,
-      image:
-        "https://i.pinimg.com/564x/6c/cf/3e/6ccf3e4e447a76f6ac8483366e6b77d4.jpg",
-    },
-    {
-      id: 3,
-      productName: "Baju Batik Wanita",
-      price: 125000,
-      image:
-        "https://i.pinimg.com/564x/92/a6/a8/92a6a8f7a0f9d68899776f65c0f8d8d0.jpg",
-    },
-  ];
-
   const { keranjang, setKeranjang } = useContext(CartContext);
 
   const saveProduct = localStorage.getItem("products");
   const [products, setProducts] = useState(
-    saveProduct ? JSON.parse(saveProduct) : productData
+    saveProduct ? JSON.parse(saveProduct) : []
   );
+
+  useEffect(() => { 
+    if (!saveProduct) {
+      // Fetch data dari file JSON
+      fetch("/products.json") // Pastikan mengganti path ini
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch data");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setProducts(data);
+          localStorage.setItem("products", JSON.stringify(data));
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }
+  }, [saveProduct]);
+
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));

@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "productName": "Cardigan Rajut",
+      "price": 200000,
+      "image": "https://i.pinimg.com/564x/7b/d1/35/7bd13515976c2c8c9a565b5063319668.jpg"
+    },
+    {
+      "id": 2,
+      "productName": "Kemeja Lengan Panjang",
+      "price": 130000,
+      "image": "https://i.pinimg.com/564x/6c/cf/3e/6ccf3e4e447a76f6ac8483366e6b77d4.jpg"
+    },
+    {
+      "id": 3,
+      "productName": "Baju Batik Wanita",
+      "price": 125000,
+      "image": "https://i.pinimg.com/564x/92/a6/a8/92a6a8f7a0f9d68899776f65c0f8d8d0.jpg"
+    }
+  ]
+  
